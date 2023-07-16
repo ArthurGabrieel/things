@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateThingDto } from './dto/create-thing.dto';
-import { UpdateThingDto } from './dto/update-thing.dto';
+import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class ThingsService {
-  create(createThingDto: CreateThingDto) {
+  create(createThingDto: Prisma.ThingCreateInput) {
     return 'This action adds a new thing';
   }
 
@@ -16,7 +15,7 @@ export class ThingsService {
     return `This action returns a #${id} thing`;
   }
 
-  update(id: number, updateThingDto: UpdateThingDto) {
+  update(id: number, updateThingDto: Prisma.ThingUpdateInput) {
     return `This action updates a #${id} thing`;
   }
 
